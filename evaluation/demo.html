@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapport de similarité de code — bubble_sort_ref.py</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; margin:0; background:#f4f6f8; color:#222; }
+  header { background: linear-gradient(135deg, #2c3e50, #3498db); color:#fff; padding:24px 32px; }
+  header h1 { margin:0 0 4px; font-size:1.5rem; }
+  header p { margin:0; opacity:.9; font-size:.95rem; }
+  .ethical { background:#fff3cd; border-left:6px solid #ffc107; padding:14px 20px; margin:20px 32px; font-weight:600; }
+  .summary { display:flex; flex-wrap:wrap; gap:14px; margin:20px 32px; }
+  .card { background:#fff; border-radius:10px; padding:16px 22px; box-shadow:0 2px 6px rgba(0,0,0,.08); min-width:150px; flex:1; }
+  .card .val { font-size:1.7rem; font-weight:700; }
+  .card .lbl { font-size:.82rem; color:#666; text-transform:uppercase; letter-spacing:.04em; }
+  section { margin:28px 32px; }
+  h2 { border-bottom:2px solid #3498db; padding-bottom:6px; }
+  table { width:100%; border-collapse:collapse; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.07); border-radius:8px; overflow:hidden; }
+  th, td { padding:10px 14px; text-align:left; border-bottom:1px solid #eee; }
+  th { background:#2c3e50; color:#fff; font-size:.85rem; }
+  .scorebar { background:#eee; border-radius:6px; height:22px; position:relative; min-width:160px; overflow:hidden; }
+  .scorebar span { display:block; height:100%; border-radius:6px 0 0 6px; }
+  .scorebar em { position:absolute; left:8px; top:2px; font-style:normal; font-size:.8rem; font-weight:700; }
+  .alert-pill { color:#fff; font-size:.75rem; font-weight:700; padding:3px 9px; border-radius:12px; }
+  details.candidate-details { background:#fff; margin:12px 0; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,.08); overflow:hidden; }
+  details summary { cursor:pointer; padding:14px 18px; display:flex; gap:14px; align-items:center; font-size:.95rem; flex-wrap:wrap; }
+  details summary .rank { font-weight:800; color:#2c3e50; min-width:32px; }
+  details summary .fname { font-weight:600; flex:1; }
+  details summary .lang { font-size:.8rem; background:#ecf0f1; padding:2px 8px; border-radius:8px; }
+  details summary .score { font-weight:800; font-size:1.1rem; }
+  .details-body { padding:0 18px 18px; }
+  .subscore-table { width:100%; margin-bottom:12px; box-shadow:none; border:1px solid #eee; }
+  .subscore-table th { background:#34495e; }
+  .bar { background:#eee; border-radius:4px; height:14px; width:240px; overflow:hidden; }
+  .bar span { display:block; height:100%; background:#3498db; }
+  .notes { background:#eaf7ff; border-left:4px solid #3498db; padding:8px 14px; font-size:.88rem; }
+  .meta { font-size:.83rem; color:#777; }
+  .diff-container { display:flex; gap:14px; margin-top:14px; }
+  .diff-pane { flex:1; min-width:0; }
+  .diff-title { font-weight:700; font-size:.86rem; margin-bottom:6px; color:#2c3e50; }
+  .code-block { background:#1e1e2e; border-radius:8px; padding:8px 0; max-height:440px; overflow:auto; font-family:'Cascadia Code', Consolas, monospace; font-size:.8rem; }
+  .code-line { display:flex; white-space:pre; padding:0 6px; }
+  .line-no { width:44px; min-width:44px; text-align:right; padding-right:10px; color:#666; user-select:none; }
+  .line-txt { flex:1; color:#d4d4d4; }
+  .frag-list { font-size:.87rem; background:#f9f9f9; padding:10px 14px; border-radius:8px; margin-top:10px; }
+  .frag-list li { margin:3px 0; }
+  .frag-score { background:#3498db; color:#fff; border-radius:8px; padding:1px 7px; font-size:.78rem; }
+  .no-frag { font-size:.88rem; color:#999; font-style:italic; }
+  footer { text-align:center; padding:24px; font-size:.82rem; color:#888; margin-top:36px; border-top:1px solid #ddd; }
+  @media (max-width:800px) { .diff-container { flex-direction:column; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Rapport de similarité entre codes sources</h1>
+  <p>Référence : <strong>bubble_sort_ref.py</strong> (python) — 2 candidat(s) évalué(s)</p>
+</header>
+
+<div class="ethical">⚠ Un score de similarité ne constitue pas, à lui seul, une preuve de plagiat. Il signale des ressemblances statistiques et structurelles devant impérativement faire l&#x27;objet d&#x27;un examen critique par un humain qualifié.</div>
+
+<div class="summary">
+  <div class="card"><div class="val">2</div><div class="lbl">Candidats</div></div>
+  <div class="card"><div class="val">82.3 %</div><div class="lbl">Score moyen</div></div>
+  <div class="card"><div class="val">100.0 %</div><div class="lbl">Score max</div></div>
+  <div class="card"><div class="val">64.6 %</div><div class="lbl">Score min</div></div>
+  <div class="card"><div class="val" style="color:#e74c3c">1</div><div class="lbl">Alertes élevées</div></div>
+  <div class="card"><div class="val" style="color:#e67e22">1</div><div class="lbl">Alertes moyennes</div></div>
+  <div class="card"><div class="val" style="color:#27ae60">0</div><div class="lbl">Alertes faibles</div></div>
+</div>
+
+<section>
+  <h2>Classement des candidats</h2>
+  <table>
+    <thead><tr>
+      <th>Rang</th><th>Fichier</th><th>Langage</th><th>Score</th>
+      <th>Alerte</th><th>Fragments</th><th>Temps (ms)</th>
+    </tr></thead>
+    <tbody><tr><td>1</td><td class='fname'>bubble_sort_renamed.py</td><td>python</td><td><div class='scorebar'><span style='width:100.0%;background:#e74c3c;'></span><em>100.0 %</em></div></td><td><span class='alert-pill' style='background:#e74c3c'>Élevé</span></td><td>2</td><td>11.1</td></tr><tr><td>2</td><td class='fname'>BubbleSort.java</td><td>java</td><td><div class='scorebar'><span style='width:64.56%;background:#e67e22;'></span><em>64.6 %</em></div></td><td><span class='alert-pill' style='background:#e67e22'>Modéré</span></td><td>4</td><td>7.2</td></tr></tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Détail et fragments surlignés</h2>
+  
+        <details class='candidate-details' style='border-left:5px solid #e74c3c;'>
+          <summary>
+            <span class='rank'>#1</span>
+            <span class='fname'>bubble_sort_renamed.py</span>
+            <span class='lang'>python</span>
+            <span class='score' style='color:#e74c3c'>100.0 %</span>
+            <span class='alert-pill' style='background:#e74c3c'>Élevé</span>
+          </summary>
+          <div class='details-body'>
+            <table class='subscore-table'><thead><tr><th>Sous-mesure</th><th></th><th>Score</th></tr></thead>
+            <tbody><tr><td>winnowing</td><td><div class='bar'><span style='width:100%;'></span></div></td><td>100.0%</td></tr><tr><td>gst</td><td><div class='bar'><span style='width:100%;'></span></div></td><td>100.0%</td></tr><tr><td>function_matching</td><td><div class='bar'><span style='width:100%;'></span></div></td><td>100.0%</td></tr><tr><td>ast_subtrees</td><td><div class='bar'><span style='width:100%;'></span></div></td><td>100.0%</td></tr></tbody></table>
+            <ul class='notes'><li>Renommage détecté (cohérence 100%) : identifiants renommés de façon bijective (ex. bubble_sort→sorter_algorithm, arr→sequence, n→size).</li></ul>
+            <p class='meta'>Temps de calcul : 11.1 ms — Fragments : 2</p>
+            
+            <div class='frag-list'><strong>Fragments correspondants :</strong><ul><li>Réf. L1–16 ↔ Cand. L1–16 — Tuile de 105 tokens <span class='frag-score'>100%</span></li><li>Réf. L4–11 ↔ Cand. L4–11 — Fonction « bubble_sort » → « sorter_algorithm » <span class='frag-score'>100%</span></li></ul></div>
+            <div class='diff-container'>
+              <div class='diff-pane'>
+                <div class='diff-title'>Référence — bubble_sort_ref.py (python)</div>
+                <div class='code-block'><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">1</span><span class="line-txt">&quot;&quot;&quot;Tri à bulles — référence de base (Python).&quot;&quot;&quot;</span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">2</span><span class="line-txt"></span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">3</span><span class="line-txt"></span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">4</span><span class="line-txt">def bubble_sort(arr):</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">5</span><span class="line-txt">    &quot;&quot;&quot;Trie un tableau par le méthode des bulles.&quot;&quot;&quot;</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">6</span><span class="line-txt">    n = len(arr)</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">7</span><span class="line-txt">    for i in range(n):</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">8</span><span class="line-txt">        for j in range(0, n - i - 1):</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">9</span><span class="line-txt">            if arr[j] &gt; arr[j + 1]:</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">10</span><span class="line-txt">                arr[j], arr[j + 1] = arr[j + 1], arr[j]</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">11</span><span class="line-txt">    return arr</span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">12</span><span class="line-txt"></span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">13</span><span class="line-txt"></span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">14</span><span class="line-txt">if __name__ == &quot;__main__&quot;:</span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">15</span><span class="line-txt">    data = [64, 34, 25, 12, 22, 11, 90]</span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">16</span><span class="line-txt">    print(&quot;Tableau trié :&quot;, bubble_sort(data))</span></div><div class="code-line"><span class="line-no">17</span><span class="line-txt"></span></div></div>
+              </div>
+              <div class='diff-pane'>
+                <div class='diff-title'>Candidat — bubble_sort_renamed.py (python)</div>
+                <div class='code-block'></div>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class='candidate-details' style='border-left:5px solid #e67e22;'>
+          <summary>
+            <span class='rank'>#2</span>
+            <span class='fname'>BubbleSort.java</span>
+            <span class='lang'>java</span>
+            <span class='score' style='color:#e67e22'>64.6 %</span>
+            <span class='alert-pill' style='background:#e67e22'>Modéré</span>
+          </summary>
+          <div class='details-body'>
+            <table class='subscore-table'><thead><tr><th>Sous-mesure</th><th></th><th>Score</th></tr></thead>
+            <tbody><tr><td>canonical_sequence</td><td><div class='bar'><span style='width:42.79%;'></span></div></td><td>42.8%</td></tr><tr><td>structural_vector</td><td><div class='bar'><span style='width:83.83%;'></span></div></td><td>83.8%</td></tr><tr><td>tree_similarity</td><td><div class='bar'><span style='width:19.85%;'></span></div></td><td>19.9%</td></tr><tr><td>pattern_heuristics</td><td><div class='bar'><span style='width:100%;'></span></div></td><td>100.0%</td></tr></tbody></table>
+            <ul class='notes'><li>Comparaison inter-langages (python ↔ java). Les scores structurels sont naturellement plus bas que les scores intra-langages.</li><li>Motifs algorithmiques reconnus : bubble_sort.</li></ul>
+            <p class='meta'>Temps de calcul : 7.2 ms — Fragments : 4</p>
+            
+            <div class='frag-list'><strong>Fragments correspondants :</strong><ul><li>Réf. L2–4 ↔ Cand. L1–3 — Séquence canonique de 3 nœuds <span class='frag-score'>100%</span></li><li>Réf. L14–24 ↔ Cand. L14–24 — Séquence canonique de 11 nœuds <span class='frag-score'>100%</span></li><li>Réf. L25–32 ↔ Cand. L27–35 — Séquence canonique de 5 nœuds <span class='frag-score'>100%</span></li><li>Réf. L40–47 ↔ Cand. L40–47 — Séquence canonique de 8 nœuds <span class='frag-score'>100%</span></li></ul></div>
+            <div class='diff-container'>
+              <div class='diff-pane'>
+                <div class='diff-title'>Référence — bubble_sort_ref.py (python)</div>
+                <div class='code-block'><div class="code-line"><span class="line-no">1</span><span class="line-txt">&quot;&quot;&quot;Tri à bulles — référence de base (Python).&quot;&quot;&quot;</span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">2</span><span class="line-txt"></span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">3</span><span class="line-txt"></span></div><div class="code-line" style="background-color:#FFD1DC;"><span class="line-no">4</span><span class="line-txt">def bubble_sort(arr):</span></div><div class="code-line"><span class="line-no">5</span><span class="line-txt">    &quot;&quot;&quot;Trie un tableau par le méthode des bulles.&quot;&quot;&quot;</span></div><div class="code-line"><span class="line-no">6</span><span class="line-txt">    n = len(arr)</span></div><div class="code-line"><span class="line-no">7</span><span class="line-txt">    for i in range(n):</span></div><div class="code-line"><span class="line-no">8</span><span class="line-txt">        for j in range(0, n - i - 1):</span></div><div class="code-line"><span class="line-no">9</span><span class="line-txt">            if arr[j] &gt; arr[j + 1]:</span></div><div class="code-line"><span class="line-no">10</span><span class="line-txt">                arr[j], arr[j + 1] = arr[j + 1], arr[j]</span></div><div class="code-line"><span class="line-no">11</span><span class="line-txt">    return arr</span></div><div class="code-line"><span class="line-no">12</span><span class="line-txt"></span></div><div class="code-line"><span class="line-no">13</span><span class="line-txt"></span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">14</span><span class="line-txt">if __name__ == &quot;__main__&quot;:</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">15</span><span class="line-txt">    data = [64, 34, 25, 12, 22, 11, 90]</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">16</span><span class="line-txt">    print(&quot;Tableau trié :&quot;, bubble_sort(data))</span></div><div class="code-line" style="background-color:#BFE6FF;"><span class="line-no">17</span><span class="line-txt"></span></div></div>
+              </div>
+              <div class='diff-pane'>
+                <div class='diff-title'>Candidat — BubbleSort.java (java)</div>
+                <div class='code-block'></div>
+              </div>
+            </div>
+          </div>
+        </details>
+</section>
+
+<footer>
+  Généré par le Détecteur de similarité entre codes sources — Un score de similarité ne constitue pas, à lui seul, une preuve de plagiat. Il signale des ressemblances statistiques et structurelles devant impérativement faire l&#x27;objet d&#x27;un examen critique par un humain qualifié.
+</footer>
+
+</body>
+</html>
