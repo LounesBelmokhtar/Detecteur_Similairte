@@ -1,0 +1,29 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+
+# --- Caches de tests et de couverture ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Environnements virtuels ---
+.venv/
+venv/
+env/
+
+# --- Artefacts de compilation PyInstaller ---
+# (le dossier dist/ est conservé : il contient les exécutables livrés)
+build/
+
+# --- Système / éditeurs ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Sorties générées à la racine ---
+rapport.csv
+rapport.html

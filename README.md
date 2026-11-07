@@ -39,8 +39,6 @@ et d'exports CSV / HTML.
   réordonnancements, cas limites et paires cross-langages.
 - **Évaluation** (`evaluation/`) : scénarios étiquetés, métriques de
   classification (précision, rappel, F1), graphiques matplotlib.
-- **Tests** (`tests/`) : 80 tests pytest couvrant le cœur, les trois niveaux
-  et les exigences de la spécification.
 
 ## Installation
 
@@ -52,7 +50,7 @@ pip install -r requirements.txt
 
 Dépendances : `tree-sitter`, `tree-sitter-python`, `tree-sitter-java`,
 `tree-sitter-c`, `tree-sitter-cpp`, `tree-sitter-javascript`,
-`matplotlib`, `numpy`, `pytest`.
+`matplotlib`, `numpy`.
 
 ## Utilisation
 
@@ -103,11 +101,11 @@ Pour **reconstruire** les exécutables (après modification du code) :
 
 ```bash
 pip install pyinstaller
-py -m PyInstaller detecteur_similarite.spec --noconfirm   # version graphique
-py -m PyInstaller cli_similarite.spec --noconfirm         # version console
+py -m PyInstaller tools/detecteur_similarite.spec --noconfirm   # version graphique
+py -m PyInstaller tools/cli_similarite.spec --noconfirm         # version console
 ```
 
-Les spécifications `*.spec` déclarent les grammaires *tree-sitter* comme
+Les spécifications `tools/*.spec` déclarent les grammaires *tree-sitter* comme
 imports cachés (elles sont chargées dynamiquement et sinon absentes du
 paquet). Chaque dossier `dist\...` contient déjà une copie de `samples\`.
 
@@ -116,12 +114,6 @@ paquet). Chaque dossier `dist\...` contient déjà une copie de `samples\`.
 ```bash
 python -m evaluation.run_evaluation                    # rapport texte
 python -m evaluation.run_evaluation --csv resultats.csv --plots
-```
-
-### Tests
-
-```bash
-python -m pytest tests -q
 ```
 
 ## Architecture
@@ -162,9 +154,10 @@ projet/
 │   ├── theme.py               #   Palette et styles ttk
 │   └── console.py             #   Rendu texte de la CLI
 ├── evaluation/                # Scénarios étiquetés, métriques, graphiques
-├── tests/                     # Tests pytest (cœur, niveaux 1/2/3, GUI)
 ├── samples/                   # Jeu d'essai organisé par catégorie
-└── docs/rapport.md            # Rapport de projet
+├── tools/                     # Spécifications PyInstaller (reconstruction)
+├── docs/                      # Rapport de projet (Markdown + PDF)
+└── dist/                      # Exécutables Windows préconstruits
 ```
 
 ## Seuils et interprétation

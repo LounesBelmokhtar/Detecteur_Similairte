@@ -1,9 +1,6 @@
 # Détecteur de similarité entre codes sources
 # Dépendances requises et optionnelles
 
-# Tests
-pytest>=8.0.0
-
 # Visualisation graphique et évaluation
 matplotlib>=3.8.0
 numpy>=1.25.0

@@ -1,12 +1,17 @@
 # -*- mode: python ; coding: utf-8 -*-
-"""
+r"""
 Spécification PyInstaller — CLI du détecteur de similarité.
 
-Construction :
-    py -m PyInstaller cli_similarite.spec --noconfirm
+Construction (depuis la racine du projet) :
+    py -m PyInstaller tools/cli_similarite.spec --noconfirm
 
 Génère dist\CLI-Similarite\CLI-Similarite.exe (mode console).
 """
+
+import os
+
+# Racine du projet : le fichier .spec se trouve dans tools/.
+PROJECT_ROOT = os.path.dirname(SPECPATH)
 
 block_cipher = None
 
@@ -22,8 +27,8 @@ hidden_imports = [
 ]
 
 a = Analysis(
-    ["cli.py"],
-    pathex=[],
+    [os.path.join(PROJECT_ROOT, "cli.py")],
+    pathex=[PROJECT_ROOT],
     binaries=[],
     datas=[],
     hiddenimports=hidden_imports,

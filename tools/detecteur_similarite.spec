@@ -1,15 +1,18 @@
 # -*- mode: python ; coding: utf-8 -*-
-"""
+r"""
 Spécification PyInstaller — Détecteur de similarité entre codes sources.
 
-Construction :
-    py -m PyInstaller detecteur_similarite.spec --noconfirm
+Construction (depuis la racine du projet) :
+    py -m PyInstaller tools/detecteur_similarite.spec --noconfirm
 
 Génère dist\DetecteurDeSimilarite\DetecteurDeSimilarite.exe (mode onedir :
 démarrage rapide, dossier de distribution transparent).
 """
 
-import sys
+import os
+
+# Racine du projet : le fichier .spec se trouve dans tools/.
+PROJECT_ROOT = os.path.dirname(SPECPATH)
 
 block_cipher = None
 
@@ -28,8 +31,8 @@ hidden_imports = [
 ]
 
 a = Analysis(
-    ["main.py"],
-    pathex=[],
+    [os.path.join(PROJECT_ROOT, "main.py")],
+    pathex=[PROJECT_ROOT],
     binaries=[],
     datas=[],
     hiddenimports=hidden_imports,
